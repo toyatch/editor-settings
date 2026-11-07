@@ -5,6 +5,11 @@
     "key": "alt+x",
     "command": "workbench.action.showCommands"
   },
+  // M-o で次のエディターを開く
+  {
+    "key": "alt+o",
+    "command": "workbench.action.nextEditor"
+  },
   // C-x C-f でファイル名を検索
   // C-x 単独の標準操作（切り取り）は使えなくなる
   {
@@ -22,11 +27,22 @@
     "key": "ctrl+x g",
     "command": "workbench.action.gotoLine"
   },
+  // C-x s で現在のファイルを保存
+  {
+    "key": "ctrl+x s",
+    "command": "workbench.action.files.save"
+  },
   // C-w で切り取り
   // 標準の C-w（エディターを閉じる）は使えなくなる
   {
     "key": "ctrl+w",
     "command": "editor.action.clipboardCutAction"
+  },
+  // M-w でコピー
+  // 標準の M-w（検索の単語単位切替）は使えなくなる
+  {
+    "key": "alt+w",
+    "command": "editor.action.clipboardCopyAction"
   },
   // C-y で貼り付け
   // 標準の C-y（やり直し）は使えなくなる
@@ -91,17 +107,6 @@
     "key": "ctrl+r",
     "command": "editor.action.previousMatchFindAction",
     "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
-  },
-  // 検索欄の C-p / C-n で前 / 次の一致に移動
-  {
-    "key": "ctrl+p",
-    "command": "editor.action.previousMatchFindAction",
-    "when": "findInputFocussed"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "editor.action.nextMatchFindAction",
-    "when": "findInputFocussed"
   },
   // C-g で選択解除、検索・補完・クイック入力を閉じる（Esc の一部）
   // 標準の C-g（行に移動）を無効化
