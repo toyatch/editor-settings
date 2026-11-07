@@ -4,6 +4,22 @@
     "key": "alt+x",
     "command": "workbench.action.showCommands"
   },
+  // C-x C-f でファイル名を検索
+  {
+    "key": "ctrl+x ctrl+f",
+    "command": "workbench.action.quickOpen"
+  },
+  // C-x k で現在のエディターを閉じる
+  {
+    "key": "ctrl+x k",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // C-w で切り取り
+  {
+    "key": "ctrl+w",
+    "command": "editor.action.clipboardCutAction",
+    "when": "textInputFocus"
+  },
   // M-c M-c でセカンダリサイドバー(Chat)の最大化を切り替える
   {
     "key": "alt+c alt+c",
