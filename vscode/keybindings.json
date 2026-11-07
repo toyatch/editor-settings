@@ -43,6 +43,18 @@
     "command": "cursorDown",
     "when": "editorTextFocus"
   },
+  // C-v / M-v で次 / 前のページに移動
+  // エディター内では標準の C-v（貼り付け）は使えなくなる
+  {
+    "key": "ctrl+v",
+    "command": "cursorPageDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+v",
+    "command": "cursorPageUp",
+    "when": "editorTextFocus"
+  },
   // C-b / C-f で前 / 後ろに移動
   // 標準はプライマリサイドバーの表示切替 / 検索
   {
