@@ -17,6 +17,11 @@
     "key": "ctrl+x k",
     "command": "workbench.action.closeActiveEditor"
   },
+  // C-x g で行・列に移動
+  {
+    "key": "ctrl+x g",
+    "command": "workbench.action.gotoLine"
+  },
   // C-w で切り取り
   // 標準の C-w（エディターを閉じる）は使えなくなる
   {
@@ -58,6 +63,71 @@
   {
     "key": "ctrl+f",
     "command": "cursorRight"
+  },
+  // C-o で選択範囲を右へ単語単位で広げる
+  // 標準の C-o（ファイルを開く）は使えなくなる
+  {
+    "key": "ctrl+o",
+    "command": "cursorWordRightSelect"
+  },
+  // C-s / C-r で検索を開き、次 / 前の一致に移動
+  // 該当する場面では標準の C-s（保存）/ C-r（最近使用した項目）は使えなくなる
+  {
+    "key": "ctrl+s",
+    "command": "actions.find",
+    "when": "editorTextFocus && !findWidgetVisible"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "actions.find",
+    "when": "editorTextFocus && !findWidgetVisible"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
+  },
+  // 検索欄の C-p / C-n で前 / 次の一致に移動
+  {
+    "key": "ctrl+p",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "findInputFocussed"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "findInputFocussed"
+  },
+  // C-g で選択解除、検索・補完・クイック入力を閉じる（Esc の一部）
+  // 標準の C-g（行に移動）を無効化
+  {
+    "key": "ctrl+g",
+    "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "cancelSelection",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "closeFindWidget",
+    "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
   },
   // C-a / C-e で行頭 / 行末に移動
   // 標準はすべて選択 / ファイルを開く
