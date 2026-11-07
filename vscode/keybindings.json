@@ -20,6 +20,50 @@
     "command": "editor.action.clipboardCutAction",
     "when": "textInputFocus"
   },
+  // C-p / C-n で前行 / 次行に移動
+  {
+    "key": "ctrl+p",
+    "command": "cursorUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "cursorDown",
+    "when": "editorTextFocus"
+  },
+  // C-b / C-f で前 / 後ろに移動
+  {
+    "key": "ctrl+b",
+    "command": "cursorLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "cursorRight",
+    "when": "editorTextFocus"
+  },
+  // C-a / C-e で行頭 / 行末に移動
+  {
+    "key": "ctrl+a",
+    "command": "cursorLineStart",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "cursorLineEnd",
+    "when": "editorTextFocus"
+  },
+  // C-d / C-h でカーソルの右 / 左の文字を削除
+  {
+    "key": "ctrl+d",
+    "command": "deleteRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "deleteLeft",
+    "when": "editorTextFocus"
+  },
   // M-c M-c でセカンダリサイドバー(Chat)の最大化を切り替える
   {
     "key": "alt+c alt+c",
