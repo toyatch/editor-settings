@@ -166,8 +166,9 @@
   // ----------------------------------------------------------------------------
   // COPILOT / CHAT
   // ----------------------------------------------------------------------------
-  // C-c で Chat にフォーカス、Chat 内ではセカンダリサイドバーの最大化を切り替える
-  // ターミナル以外では標準の C-c（コピー）は使えなくなる
+  // C-c で Chat にフォーカス、Chat 内では確認画面・質問表示と入力欄のフォーカスを切り替える
+  // 質問表示がある場合は確認画面より優先される
+  // Chat 外のターミナル以外では標準の C-c（コピー）は使えなくなる
   {
     "key": "ctrl+c",
     "command": "workbench.panel.chat.view.copilot.focus",
@@ -175,6 +176,17 @@
   },
   {
     "key": "ctrl+c",
+    "command": "workbench.action.chat.focusConfirmation",
+    "when": "inChat"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.chat.focusQuestionCarousel",
+    "when": "inChat && chatHasQuestionCarousel"
+  },
+  // Chat 内で C-x 1 を押すとセカンダリサイドバーの最大化を切り替える
+  {
+    "key": "ctrl+x 1",
     "command": "workbench.action.toggleMaximizedAuxiliaryBar",
     "when": "inChat && !terminalFocus"
   },
@@ -184,12 +196,5 @@
     "key": "ctrl+x k",
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "inChat"
-  },
-  // C-q でチャットの確認画面にフォーカス
-  {
-    "key": "ctrl+q",
-    "command": "workbench.action.chat.focusConfirmation",
-    "when": "inChat"
   }
 ]
-                                          
