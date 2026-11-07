@@ -184,6 +184,18 @@
     "command": "workbench.action.chat.focusQuestionCarousel",
     "when": "inChat && chatHasQuestionCarousel"
   },
+  // C-x a でチャットのツール実行を許可する
+  {
+    "key": "ctrl+x a",
+    "command": "workbench.action.chat.acceptTool",
+    "when": "inChat && chatHasToolConfirmation"
+  },
+  // C-x s でチャットのツール実行をスキップする（それ以外では保存）
+  {
+    "key": "ctrl+x s",
+    "command": "workbench.action.chat.skipTool",
+    "when": "inChat && chatHasToolConfirmation"
+  },
   // Chat 内で C-x 1 を押すとセカンダリサイドバーの最大化を切り替える
   {
     "key": "ctrl+x 1",
