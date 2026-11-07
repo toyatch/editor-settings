@@ -4,11 +4,6 @@
     "key": "alt+x",
     "command": "workbench.action.showCommands"
   },
-  // M-c c で Chat パネルにフォーカス
-  {
-    "key": "alt+c c",
-    "command": "workbench.panel.chat.view.copilot.focus"
-  },
   // M-c M-c でセカンダリサイドバー(Chat)の最大化を切り替える
   {
     "key": "alt+c alt+c",
