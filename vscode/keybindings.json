@@ -1,6 +1,13 @@
 [
+  // M-x でコマンドパレットを開く (Emacs の M-x 相当)
   {
     "key": "alt+x",
     "command": "workbench.action.showCommands"
+  },
+  // M-c-c で Chat パネルにフォーカス (Alt+C を 2回押す)
+  {
+    "key": "alt+c alt+c",
+    "command": "workbench.panel.chat.view.copilot.focus"
   }
 ]
+                                          
