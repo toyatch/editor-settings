@@ -184,6 +184,12 @@
     "key": "ctrl+x k",
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "inChat"
+  },
+  // C-q でチャットの確認画面にフォーカス
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.chat.focusConfirmation",
+    "when": "inChat"
   }
 ]
                                           
