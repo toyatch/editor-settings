@@ -79,6 +79,16 @@
     "command": "deleteLeft",
     "when": "editorTextFocus"
   },
+  // C-k でカーソルから行末まで切り取り（行末では設定によって行全体を切り取り）
+  // 標準の C-k で始まるショートカットはエディターのテキスト入力中は使えなくなる
+  {
+    "key": "ctrl+k",
+    "command": "runCommands",
+    "args": {
+      "commands": ["cursorLineEndSelect", "editor.action.clipboardCutAction"]
+    },
+    "when": "editorTextFocus"
+  },
   // M-c M-c でセカンダリサイドバー(Chat)の最大化を切り替える
   // 標準の M-c（検索の大文字・小文字を区別）は、キー入力の続きを待つため使えなくなる
   {
