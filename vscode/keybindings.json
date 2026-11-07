@@ -1,32 +1,38 @@
 [
   // M-x でコマンドパレットを開く (Emacs の M-x 相当)
+  // 標準の割り当てなし
   {
     "key": "alt+x",
     "command": "workbench.action.showCommands"
   },
   // C-x C-f でファイル名を検索
+  // C-x 単独の標準操作（切り取り）は使えなくなる
   {
     "key": "ctrl+x ctrl+f",
     "command": "workbench.action.quickOpen"
   },
   // C-x k で現在のエディターを閉じる
+  // C-x 単独の標準操作（切り取り）は使えなくなる
   {
     "key": "ctrl+x k",
     "command": "workbench.action.closeActiveEditor"
   },
   // C-w で切り取り
+  // 標準の C-w（エディターを閉じる）はテキスト入力中は使えなくなる
   {
     "key": "ctrl+w",
     "command": "editor.action.clipboardCutAction",
     "when": "textInputFocus"
   },
   // C-y で貼り付け
+  // 標準の C-y（やり直し）はテキスト入力中は使えなくなる
   {
     "key": "ctrl+y",
     "command": "editor.action.clipboardPasteAction",
     "when": "textInputFocus"
   },
   // C-p / C-n で前行 / 次行に移動
+  // 標準はファイルを開く / 新しいファイル
   {
     "key": "ctrl+p",
     "command": "cursorUp",
@@ -38,6 +44,7 @@
     "when": "editorTextFocus"
   },
   // C-b / C-f で前 / 後ろに移動
+  // 標準はプライマリサイドバーの表示切替 / 検索
   {
     "key": "ctrl+b",
     "command": "cursorLeft",
@@ -49,6 +56,7 @@
     "when": "editorTextFocus"
   },
   // C-a / C-e で行頭 / 行末に移動
+  // 標準はすべて選択 / ファイルを開く
   {
     "key": "ctrl+a",
     "command": "cursorLineStart",
@@ -60,6 +68,7 @@
     "when": "editorTextFocus"
   },
   // C-d / C-h でカーソルの右 / 左の文字を削除
+  // 標準は次の一致を選択 / 置換
   {
     "key": "ctrl+d",
     "command": "deleteRight",
@@ -71,6 +80,7 @@
     "when": "editorTextFocus"
   },
   // M-c M-c でセカンダリサイドバー(Chat)の最大化を切り替える
+  // 標準の M-c（検索の大文字・小文字を区別）は、キー入力の続きを待つため使えなくなる
   {
     "key": "alt+c alt+c",
     "command": "workbench.action.toggleMaximizedAuxiliaryBar"
