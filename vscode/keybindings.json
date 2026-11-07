@@ -20,6 +20,12 @@
     "command": "editor.action.clipboardCutAction",
     "when": "textInputFocus"
   },
+  // C-y で貼り付け
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "textInputFocus"
+  },
   // C-p / C-n で前行 / 次行に移動
   {
     "key": "ctrl+p",
