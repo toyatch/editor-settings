@@ -16,16 +16,11 @@
     "key": "ctrl+x ctrl+f",
     "command": "workbench.action.quickOpen"
   },
-  // C-x k で現在のエディターを閉じる（Chat 内ではセカンダリサイドバーを閉じる）
+  // C-x k で現在のエディターを閉じる
   // C-x 単独の標準操作（切り取り）は使えなくなる
   {
     "key": "ctrl+x k",
     "command": "workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "ctrl+x k",
-    "command": "workbench.action.closeAuxiliaryBar",
-    "when": "inChat"
   },
   // C-x g で行・列に移動
   {
@@ -168,6 +163,9 @@
       "commands": ["cursorLineEndSelect", "editor.action.clipboardCutAction"]
     }
   },
+  // ----------------------------------------------------------------------------
+  // COPILOT / CHAT
+  // ----------------------------------------------------------------------------
   // C-c で Chat にフォーカス、Chat 内ではセカンダリサイドバーの最大化を切り替える
   // ターミナル以外では標準の C-c（コピー）は使えなくなる
   {
@@ -180,10 +178,11 @@
     "command": "workbench.action.toggleMaximizedAuxiliaryBar",
     "when": "inChat && !terminalFocus"
   },
-  // Chat にフォーカスがあるとき、C-x 1 でセカンダリサイドバーの最大化を切り替える
+  // C-x k でセカンダリサイドバーを閉じる
+  // C-x 単独の標準操作（切り取り）は使えなくなる
   {
-    "key": "ctrl+x 1",
-    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    "key": "ctrl+x k",
+    "command": "workbench.action.closeAuxiliaryBar",
     "when": "inChat"
   }
 ]
