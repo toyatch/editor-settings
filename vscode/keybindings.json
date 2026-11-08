@@ -50,16 +50,6 @@
     "key": "ctrl+y",
     "command": "editor.action.clipboardPasteAction"
   },
-  // C-p / C-n で前行 / 次行に移動
-  // 標準はファイルを開く / 新しいファイル
-  {
-    "key": "ctrl+p",
-    "command": "cursorUp"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "cursorDown"
-  },
   // C-v / M-v で次 / 前のページに移動
   // 標準の C-v（貼り付け）は使えなくなる
   {
@@ -69,16 +59,6 @@
   {
     "key": "alt+v",
     "command": "cursorPageUp"
-  },
-  // C-b / C-f で前 / 後ろに移動
-  // 標準はプライマリサイドバーの表示切替 / 検索
-  {
-    "key": "ctrl+b",
-    "command": "cursorLeft"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "cursorRight"
   },
   // C-o で選択範囲を右へ単語単位で広げる
   // 標準の C-o（ファイルを開く）は使えなくなる
@@ -107,52 +87,6 @@
     "key": "ctrl+r",
     "command": "editor.action.previousMatchFindAction",
     "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
-  },
-  // C-g で選択解除、検索・補完・クイック入力を閉じる（Esc の一部）
-  // 標準の C-g（行に移動）を無効化
-  {
-    "key": "ctrl+g",
-    "command": "-workbench.action.gotoLine"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "cancelSelection",
-    "when": "editorTextFocus && editorHasSelection"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "closeFindWidget",
-    "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "hideSuggestWidget",
-    "when": "suggestWidgetVisible && editorTextFocus"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "workbench.action.closeQuickOpen",
-    "when": "inQuickOpen"
-  },
-  // C-a / C-e で行頭 / 行末に移動
-  // 標準はすべて選択 / ファイルを開く
-  {
-    "key": "ctrl+a",
-    "command": "cursorLineStart"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "cursorLineEnd"
-  },
-  // C-d / C-h でカーソルの右 / 左の文字を削除
-  // 標準は次の一致を選択 / 置換
-  {
-    "key": "ctrl+d",
-    "command": "deleteRight"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "deleteLeft"
   },
   // C-k でカーソルから行末まで切り取り（行末では設定によって行全体を切り取り）
   // 標準の C-k で始まるショートカットは使えなくなる
