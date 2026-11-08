@@ -1,15 +1,21 @@
 [
+  // ----------------------------------------------------------------------------
+  // カーソル移動
+  // ----------------------------------------------------------------------------
+  // キーボード側にゆだねる(Fnなどの修飾キーを使った操作)
+
+  // ----------------------------------------------------------------------------
+  // emacs風 コマンドパレットを開く
+  // ----------------------------------------------------------------------------
   // M-x でコマンドパレットを開く (Emacs の M-x 相当)
   // 標準の割り当てなし
   {
     "key": "alt+x",
     "command": "workbench.action.showCommands"
   },
-  // M-o で次のエディターを開く
-  {
-    "key": "alt+o",
-    "command": "workbench.action.nextEditor"
-  },
+  // ----------------------------------------------------------------------------
+  // emacs風 C-x 系のキーバインド
+  // ----------------------------------------------------------------------------
   // C-x C-f でファイル名を検索
   // C-x 単独の標準操作（切り取り）は使えなくなる
   {
@@ -22,40 +28,44 @@
     "key": "ctrl+x k",
     "command": "workbench.action.closeActiveEditor"
   },
+  // C-x 0 で現在のエディターを閉じる (Emacs: delete-window)
+  {
+    "key": "ctrl+x 0",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // C-x 1 で他のすべてのエディターを閉じる (Emacs: delete-other-windows)
+  {
+    "key": "ctrl+x 1",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  // C-x 2 でエディターを水平分割（上下に分割） (Emacs: split-window-below)
+  {
+    "key": "ctrl+x 2",
+    "command": "workbench.action.splitEditorDown"
+  },
+  // C-x 3 でエディターを垂直分割（左右に分割） (Emacs: split-window-right)
+  {
+    "key": "ctrl+x 3",
+    "command": "workbench.action.splitEditorRight"
+  },
+  // C-x 4 でエディターグループを新規作成（垂直分割） (Emacs: split-window-right の別操作)
+  {
+    "key": "ctrl+x 4",
+    "command": "workbench.action.focusNextGroup"
+  },
   // C-x g で行・列に移動
   {
     "key": "ctrl+x g",
     "command": "workbench.action.gotoLine"
   },
-  // C-x s で現在のファイルを保存
+  // C-x C-s で現在のファイルを保存
   {
     "key": "ctrl+x ctrl+s",
     "command": "workbench.action.files.save"
   },
-  // C-w で切り取り
-  // 標準の C-w（エディターを閉じる）は使えなくなる
-  {
-    "key": "ctrl+w",
-    "command": "editor.action.clipboardCutAction"
-  },
-  // M-w でコピー
-  // 標準の M-w（検索の単語単位切替）は使えなくなる
-  {
-    "key": "alt+w",
-    "command": "editor.action.clipboardCopyAction"
-  },
-  // C-y で貼り付け
-  // 標準の C-y（やり直し）は使えなくなる
-  {
-    "key": "ctrl+y",
-    "command": "editor.action.clipboardPasteAction"
-  },
-  // C-o で選択範囲を右へ単語単位で広げる
-  // 標準の C-o（ファイルを開く）は使えなくなる
-  {
-    "key": "ctrl+o",
-    "command": "cursorWordRightSelect"
-  },
+  // ----------------------------------------------------------------------------
+  // emacs風 ファイル内検索系のキーバインド
+  // ----------------------------------------------------------------------------
   // C-s / C-r で検索を開き、次 / 前の一致に移動
   // 該当する場面では標準の C-s（保存）/ C-r（最近使用した項目）は使えなくなる
   {
@@ -78,6 +88,33 @@
     "command": "editor.action.previousMatchFindAction",
     "when": "findWidgetVisible && (editorFocus || findWidgetFocused)"
   },
+  // ----------------------------------------------------------------------------
+  // emacs風 エディット操作のキーバインド
+  // ----------------------------------------------------------------------------
+  // C-o で選択範囲を右へ単語単位で広げる
+  // 標準の C-o（ファイルを開く）は使えなくなる
+  {
+    "key": "ctrl+o",
+    "command": "cursorWordRightSelect"
+  },
+  // C-w で切り取り
+  // 標準の C-w（エディターを閉じる）は使えなくなる
+  {
+    "key": "ctrl+w",
+    "command": "editor.action.clipboardCutAction"
+  },
+  // M-w でコピー
+  // 標準の M-w（検索の単語単位切替）は使えなくなる
+  {
+    "key": "alt+w",
+    "command": "editor.action.clipboardCopyAction"
+  },
+  // C-y で貼り付け
+  // 標準の C-y（やり直し）は使えなくなる
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.clipboardPasteAction"
+  },
   // C-k でカーソルから行末まで切り取り（行末では設定によって行全体を切り取り）
   // 標準の C-k で始まるショートカットは使えなくなる
   {
@@ -88,23 +125,31 @@
     }
   },
   // ----------------------------------------------------------------------------
+  // emacs風 バッファ切り替え系のキーバインド
+  // ----------------------------------------------------------------------------
+  // M-o で次のエディターを開く
+  {
+    "key": "alt+o",
+    "command": "workbench.action.nextEditor"
+  },
+  // ----------------------------------------------------------------------------
   // COPILOT / CHAT
   // ----------------------------------------------------------------------------
   // M-c で Chat にフォーカス、Chat 内では確認画面・質問表示と入力欄のフォーカスを切り替える
   // 質問表示がある場合は確認画面より優先される
   // Chat 外のターミナル以外では標準の M-cは使えなくなる
   {
-    "key": "alt+c alt+space",
+    "key": "alt+c alt+c",
     "command": "workbench.panel.chat.view.copilot.focus",
     "when": "!terminalFocus"
   },
   {
-    "key": "alt+c alt+space",
+    "key": "alt+c alt+c",
     "command": "workbench.action.chat.focusConfirmation",
     "when": "inChat"
   },
   {
-    "key": "alt+c alt+space",
+    "key": "alt+c alt+c",
     "command": "workbench.action.chat.focusQuestionCarousel",
     "when": "inChat && chatHasQuestionCarousel"
   },
@@ -122,7 +167,7 @@
   },
   // alt+c alt+enter でセカンダリサイドバーの最大化を切り替える
   {
-    "key": "alt+c alt+enter",
+    "key": "alt+c alt+o",
     "command": "workbench.action.toggleMaximizedAuxiliaryBar",
     "when": "inChat && !terminalFocus"
   },
