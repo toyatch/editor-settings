@@ -16,7 +16,7 @@ VSCode 向けの Emacs 風キーバインド実装プロジェクト。
 
 1. `Ctrl+K Ctrl+S` でキーボードショートカットを開く
 2. 右上の "キーバインディングを JSON で編集" をクリック
-3. [`keybindings.json`](./keybindings.json) の内容をコピーして追加
+3. [`vscode/keybindings.json`](./vscode/keybindings.json) の内容をコピーして追加
 
 または
 
