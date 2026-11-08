@@ -90,46 +90,46 @@
   // ----------------------------------------------------------------------------
   // COPILOT / CHAT
   // ----------------------------------------------------------------------------
-  // C-c で Chat にフォーカス、Chat 内では確認画面・質問表示と入力欄のフォーカスを切り替える
+  // M-c で Chat にフォーカス、Chat 内では確認画面・質問表示と入力欄のフォーカスを切り替える
   // 質問表示がある場合は確認画面より優先される
-  // Chat 外のターミナル以外では標準の C-c（コピー）は使えなくなる
+  // Chat 外のターミナル以外では標準の M-cは使えなくなる
   {
-    "key": "alt+c",
+    "key": "alt+c alt+space",
     "command": "workbench.panel.chat.view.copilot.focus",
     "when": "!terminalFocus"
   },
   {
-    "key": "alt+c",
+    "key": "alt+c alt+space",
     "command": "workbench.action.chat.focusConfirmation",
     "when": "inChat"
   },
   {
-    "key": "alt+c",
+    "key": "alt+c alt+space",
     "command": "workbench.action.chat.focusQuestionCarousel",
     "when": "inChat && chatHasQuestionCarousel"
   },
-  // C-x a でチャットのツール実行を許可する
+  // alt+c alt+a でチャットのツール実行を許可する
   {
-    "key": "ctrl+x a",
+    "key": "alt+c alt+a",
     "command": "workbench.action.chat.acceptTool",
     "when": "inChat && chatHasToolConfirmation"
   },
-  // C-x s でチャットのツール実行をスキップする（それ以外では保存）
+  // alt+c alt+s でチャットのツール実行をスキップする（それ以外では保存）
   {
-    "key": "ctrl+x s",
+    "key": "alt+c alt+s",
     "command": "workbench.action.chat.skipTool",
     "when": "inChat && chatHasToolConfirmation"
   },
-  // Chat 内で C-x 1 を押すとセカンダリサイドバーの最大化を切り替える
+  // alt+c alt+enter でセカンダリサイドバーの最大化を切り替える
   {
-    "key": "ctrl+x 1",
+    "key": "alt+c alt+enter",
     "command": "workbench.action.toggleMaximizedAuxiliaryBar",
     "when": "inChat && !terminalFocus"
   },
-  // C-x k でセカンダリサイドバーを閉じる
-  // C-x 単独の標準操作（切り取り）は使えなくなる
+  // alt+c alt+k でセカンダリサイドバーを閉じる
+  // alt+c 単独の標準操作（切り取り）は使えなくなる
   {
-    "key": "ctrl+x k",
+    "key": "alt+c alt+k",
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "inChat"
   }
