@@ -50,16 +50,6 @@
     "key": "ctrl+y",
     "command": "editor.action.clipboardPasteAction"
   },
-  // C-v / M-v で次 / 前のページに移動
-  // 標準の C-v（貼り付け）は使えなくなる
-  {
-    "key": "ctrl+v",
-    "command": "cursorPageDown"
-  },
-  {
-    "key": "alt+v",
-    "command": "cursorPageUp"
-  },
   // C-o で選択範囲を右へ単語単位で広げる
   // 標準の C-o（ファイルを開く）は使えなくなる
   {
@@ -104,17 +94,17 @@
   // 質問表示がある場合は確認画面より優先される
   // Chat 外のターミナル以外では標準の C-c（コピー）は使えなくなる
   {
-    "key": "ctrl+c",
+    "key": "alt+c",
     "command": "workbench.panel.chat.view.copilot.focus",
     "when": "!terminalFocus"
   },
   {
-    "key": "ctrl+c",
+    "key": "alt+c",
     "command": "workbench.action.chat.focusConfirmation",
     "when": "inChat"
   },
   {
-    "key": "ctrl+c",
+    "key": "alt+c",
     "command": "workbench.action.chat.focusQuestionCarousel",
     "when": "inChat && chatHasQuestionCarousel"
   },
